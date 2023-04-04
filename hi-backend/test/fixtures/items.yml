@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  item_name: MyString
+  room: MyString
+  type: 
+  description: MyText
+  quantity: 1
+  purchase_amount: 9.99
+  model: MyString
+  purchase_date: 2023-04-04
+  value: 9.99
+
+two:
+  item_name: MyString
+  room: MyString
+  type: 
+  description: MyText
+  quantity: 1
+  purchase_amount: 9.99
+  model: MyString
+  purchase_date: 2023-04-04
+  value: 9.99
