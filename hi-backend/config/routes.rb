@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get 'items/edit'
   get 'items/update'
   get 'items/destroy'
+  # resources :items
+  resources :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

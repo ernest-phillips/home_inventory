@@ -1,6 +1,13 @@
 require_relative "boot"
 
 require "rails/all"
+# require "active_storage/engine"
+# require "active_storage/attached"
+# require "active_storage/attached/macros"
+# require "active_storage/attached/model"
+# require "active_storage/attached/one"
+# require "active_storage/attached/many"
+require "bcrypt"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
