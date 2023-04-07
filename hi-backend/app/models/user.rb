@@ -4,6 +4,7 @@ class User < ApplicationRecord
   before_save :encrypt_password
 
   validates_confirmation_of :password
+  validates :password_confirmation, presence: true
   validates_presence_of :password, on: :create
   validates_presence_of :email
   validates_uniqueness_of :email
