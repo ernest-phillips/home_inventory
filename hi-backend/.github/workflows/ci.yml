@@ -1,0 +1,16 @@
+name: Continuous Integration
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Ruby 3.1.2
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 3.1.2
+    - name: Build and test with Minitest
+      run: |
+        gem install bundler
+        bundle install
+        bundle exec rake test
