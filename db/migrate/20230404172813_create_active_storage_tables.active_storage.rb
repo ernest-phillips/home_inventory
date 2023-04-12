@@ -3,11 +3,6 @@
 # This migration comes from active_storage (originally 20170806125915)
 class CreateActiveStorageTables < ActiveRecord::Migration[5.2]
   def change
-    # Use Active Record's configured type for primary and foreign keys
-    # rubocop:todo Metrics/MethodLength
-      # rubocop:todo Metrics/AbcSize
-      # rubocop:enable Metrics/AbcSize
-      # rubocop:enable Metrics/MethodLength
     primary_key_type, foreign_key_type = primary_and_foreign_key_types
 
     create_table :active_storage_blobs, id: primary_key_type do |t|
