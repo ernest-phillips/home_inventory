@@ -1,0 +1,9 @@
+require:
+  - rubocop-rails
+
+AllCops:
+  TargetRubyVersion: 3.1.2
+
+Rails/Date:
+  Enabled: true
+  TargetRailsVersion: 7.0.4
