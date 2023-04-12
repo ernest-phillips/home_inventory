@@ -1,4 +1,6 @@
 # frozen_string_literal: true
 
-module ItemsHelper
+# Items Helper
+
+module ItemsHelper # rubocop:todo Style/Documentation
 end

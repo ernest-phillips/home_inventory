@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-class UsersController < ApplicationController
+# Controller for Users
+
+class UsersController < ApplicationController # rubocop:todo Style/Documentation
   def new
     @user = User.new
   end

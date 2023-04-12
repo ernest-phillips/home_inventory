@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
-class CreateItems < ActiveRecord::Migration[7.0]
-  def change
+# Create Items
+
+class CreateItems < ActiveRecord::Migration[7.0] # rubocop:todo Style/Documentation
+  def change # rubocop:todo Metrics/MethodLength
     create_table :items do |t|
       t.string :item_name
       t.string :room

@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
-class ItemsController < ApplicationController
+# Controller for Items
+
+class ItemsController < ApplicationController # rubocop:todo Style/Documentation
+  before_action :authenticate_user!
+  before_action :set_item, only: %i[show edit update destroy]
   def index; end
 
   def show; end
