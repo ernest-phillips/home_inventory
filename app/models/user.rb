@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   attr_accessor :password
 
@@ -10,7 +12,7 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
 
   def self.authenticate(email, password)
-    user = find_by_email(email)
+    user = find_by(email:)
     return unless user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)
 
     user
@@ -19,7 +21,7 @@ class User < ApplicationRecord
   private
 
   def encrypt_password
-    return unless password.present?
+    return if password.blank?
 
     self.password_salt = BCrypt::Engine.generate_salt
     self.password_hash = BCrypt::Engine.hash_secret(password, password_salt)
