@@ -1,14 +1,12 @@
 # frozen_string_literal: true
 
-# User mdel
+# User model
 
 class User < ApplicationRecord # rubocop:todo Style/Documentation
   attr_accessor :password
 
   before_save :encrypt_password
-
   validates :password, confirmation: true
-  validates :password_confirmation, presence: true
   validates :password, presence: { on: :create }
   validates :email, presence: true
   validates :email, uniqueness: true # rubocop:todo Rails/UniqueValidationWithoutIndex

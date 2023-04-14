@@ -20,7 +20,7 @@ class UsersController < ApplicationController # rubocop:todo Style/Documentation
   private
 
   def user_params
-    params.require(:user).permit(:email, :password, :first_name, :last_name, :password_salt, :password_hash,
-                                 :password_confirmation)
+    params.require(:user).permit(:email, :password, :first_name, :last_name, :password_salt,
+                                 :password_hash, :password_confirmation)
   end
 end
