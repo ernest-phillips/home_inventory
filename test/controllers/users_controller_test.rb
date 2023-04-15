@@ -28,4 +28,13 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
     assert_template :new
   end
+
+  test 'should not create user with duplicate email' do
+    assert_no_difference('User.count') do
+      post users_url, params: { user: {
+        email: 'user@abc.com`,
+        password: 'password',}
+        }
+      }
+  end
 end

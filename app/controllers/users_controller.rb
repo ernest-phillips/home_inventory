@@ -17,10 +17,31 @@ class UsersController < ApplicationController # rubocop:todo Style/Documentation
     end
   end
 
+  def show
+    @user = User.find(params[:id])
+  end
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  ef update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      redirect_to @user, notice: "Your profile has been updated!"
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    session[:user_id] = nil
+    redirect_to root_path, notice: "You have successfully logged out."
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:email, :password, :first_name, :last_name, :password_salt,
-                                 :password_hash, :password_confirmation)
+    params.require(:user).permit(:email, :password, :password_confirmation, :first_name, :last_name)
   end
 end
