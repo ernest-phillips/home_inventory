@@ -25,10 +25,10 @@ class UsersController < ApplicationController # rubocop:todo Style/Documentation
     @user = User.find(params[:id])
   end
 
-  ef update
+  def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to @user, notice: "Your profile has been updated!"
+      redirect_to @user, notice: 'Your profile has been updated!'
     else
       render :edit
     end
@@ -36,7 +36,7 @@ class UsersController < ApplicationController # rubocop:todo Style/Documentation
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_path, notice: "You have successfully logged out."
+    redirect_to root_path, notice: 'You have successfully logged out.'
   end
 
   private
