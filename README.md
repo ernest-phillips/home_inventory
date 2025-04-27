@@ -1,24 +1,19 @@
-# README
+# Home Inventory App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple Ruby on Rails API application to manage home inventory, allowing users to track residences and items stored within them.
 
-Things you may want to cover:
+## Tech Stack
 
-* Ruby version
+- Ruby 3.2
+- Ruby on Rails 7
+- PostgreSQL (or SQLite if local)
+- RSpec (for testing)
+- FactoryBot (for test data)
+- Rubocop (for code linting)
 
-* System dependencies
+## Setup Instructions
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/ernest-phillips/home_inventory.git
+   cd home_inventory
