@@ -4,6 +4,6 @@ FactoryBot.define do
     address { "1234 main street" }
     city { "Folsom" }
     state { "CA" }
-    zip { "95630" }
+    zip_code { "95630" }
   end
 end

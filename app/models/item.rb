@@ -9,9 +9,12 @@ class Item < ApplicationRecord
   validates :location, length: { maximum: 255 }
   validates :condition, inclusion: { in: %w[new used damaged] }
   validates :category, inclusion: { in: %w[electronics furniture clothing appliances] }
-  validates :residence_id, presence: true
   validates :residence_id, numericality: { only_integer: true, greater_than: 0 }
-  validates :residence_id, uniqueness: { scope: :name, message: "Item name must be unique within the same residence" }
-  validates :residence_id, format: { with: /\A\d+\z/, message: "must be a positive integer" }
+  validates :residence_id,
+            uniqueness: { scope: :name,
+                          message: I18n.t('activerecord.errors.models.item.attributes.residence_id.unique_name_within_residence') }
+  validates :residence_id,
+            format: { with: /\A\d+\z/,
+                      message: I18n.t('activerecord.errors.models.item.attributes.residence_id.invalid_format') }
   validates :residence_id, length: { maximum: 255 }
 end
