@@ -1,0 +1,49 @@
+# See https://help.github.com/articles/ignoring-files for more about ignoring files.
+
+# Ignore bundler config.
+/.bundle
+
+# Ignore all logfiles and tempfiles.
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+# Ignore pidfiles, but keep the directory.
+/tmp/pids/*
+!/tmp/pids/
+!/tmp/pids/.keep
+
+# Ignore uploaded files in development.
+/storage/*
+!/storage/.keep
+/tmp/storage/*
+!/tmp/storage/
+!/tmp/storage/.keep
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
+
+# Ignore database config (if you're going to customize secrets)
+/config/database.yml
+
+# Ignore system-specific files
+.DS_Store
+
+# Ignore byebug history (debugger gem)
+/.byebug_history
+
+# Ignore node_modules if frontend will be React
+/node_modules
+yarn-debug.log*
+.yarn-integrity
+
+# Ignore Vite, Webpacker (if using Vite later for React)
+/public/packs
+/public/packs-test
+/public/vite
+/tmp/cache/webpacker
+node_modules/
+
+# Ignore rbenv-version
+.ruby-version
