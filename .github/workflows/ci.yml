@@ -35,7 +35,7 @@ jobs:
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 3.2 # Match your local Ruby version
+        ruby-version: 3.1.2 # Match your local Ruby version
         bundler-cache: false # 👈 Turn off automatic cache because we will manage it manually
 
     - name: Cache bundler
