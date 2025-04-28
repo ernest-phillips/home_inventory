@@ -3,6 +3,8 @@
 A simple Ruby on Rails API application to manage home inventory, allowing users to track residences and items stored within them.
 
 ![CI](https://github.com/ernest-phillips/home_inventory/actions/workflows/ci.yml/badge.svg)
+![Ruby Version](https://img.shields.io/badge/Ruby-3.1-red.svg)
+![Rails Version](https://img.shields.io/badge/Rails-7.1-blue.svg)
 
 ## Tech Stack
 
