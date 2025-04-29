@@ -5,5 +5,6 @@ FactoryBot.define do
     city { "Folsom" }
     state { "CA" }
     zip_code { "95630" }
+    association :user
   end
 end

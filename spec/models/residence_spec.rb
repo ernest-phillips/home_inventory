@@ -1,6 +1,8 @@
 require 'rails_helper'
 
+
 RSpec.describe Residence, type: :model do
+
   it 'is valid with valid attributes' do
     residence = build(:residence)
     expect(residence).to be_valid
@@ -67,8 +69,9 @@ RSpec.describe Residence, type: :model do
   end
 
   it 'is invalid with a duplicate residence' do
-    create(:residence, address: '123 Main St', city: 'Springfield', state: 'IL', zip_code: '62701')
-    residence = build(:residence, address: '123 Main St', city: 'Springfield', state: 'IL', zip_code: '62701')
+    user = create(:user)
+    create(:residence, name: 'My House', address: '123 Main St', city: 'Springfield', state: 'IL', zip_code: '62701', user: user)
+    residence = build(:residence, address: '123 Main St', city: 'Springfield', state: 'IL', zip_code: '62701', user: user)
     residence.validate
     expect(residence.errors[:zip_code]).to include('Residence with the same address already exists')
   end
