@@ -1,7 +1,14 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+# db/seeds.rb
+
+user = User.create!(email: "user@example.com", password: "password123")
+
+residence = Residence.create!(name: "My House", address: "123 Main St", user: user)
+
+Item.create!(name: "TV", description: "4K OLED", residence: residence, user: user)
+Item.create!(name: "Sofa", description: "Leather recliner", residence: residence, user: user)
+Item.create!(name: "Coffee Table", description: "Wooden coffee table", residence: residence, user: user)
+Item.create!(name: "Dining Table", description: "Round dining table", residence: residence, user: user)
+Item.create!(name: "Bed", description: "King size bed", residence: residence, user: user)
+Item.create!(name: "Refrigerator", description: "Stainless steel fridge", residence: residence, user: user)
+Item.create!(name: "Washing Machine", description: "Front load washing machine", residence: residence, user: user)
+Item.create!(name: "Microwave", description: "Countertop microwave", residence: residence, user: user)
