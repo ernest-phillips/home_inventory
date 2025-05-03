@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :residence do
-    name { "My Residence" }
-    address { "1234 main street" }
+    sequence(:name) { |n| "Residence #{n}" }
+    sequence(:address) { |n| "1234 Main St Apt #{n}" }
     city { "Folsom" }
     state { "CA" }
     zip_code { "95630" }
