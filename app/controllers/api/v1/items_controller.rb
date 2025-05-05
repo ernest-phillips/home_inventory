@@ -3,20 +3,21 @@
 module Api
   module V1
     class ItemsController < ApplicationController
-      before_action :set_residence
+      before_action :set_residence, only: [:index, :show, :create]
 
       def index
-        items = @residence.items
+        items = residence.items
         render json: items
       end
 
       def show
-        item = @residence.items.find(params[:id])
+        residence = current_user.residences.find(params[:residence_id])
+        item = residence.items.find(params[:id])
         render json: item
       end
 
       def create
-        item = @residence.items.new(item_params)
+        item = residence.items.new(item_params)
         if item.save
           render json: item, status: :created
         else
@@ -27,7 +28,7 @@ module Api
       private
 
       def set_residence
-        @residence = Residence.find(params[:residence_id])
+        @residence = current_user.residences.find(params[:residence_id])
       end
 
       def item_params

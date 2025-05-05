@@ -276,7 +276,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   debug
-  devise
+  devise (~> 4.9, >= 4.9.3)
   factory_bot_rails
   faker
   mysql2 (~> 0.5)
