@@ -3,7 +3,9 @@
 module Api
   module V1
     class ItemsController < ApplicationController
+      before_action :authenticate_user!
       before_action :set_residence
+      before_action :set_item, only: [:show, :update, :destroy]
 
       def index
         items = @residence.items
@@ -11,8 +13,7 @@ module Api
       end
 
       def show
-        item = @residence.items.find(params[:id])
-        render json: item
+        render json: @item
       end
 
       def create
@@ -27,11 +28,19 @@ module Api
       private
 
       def set_residence
-        @residence = Residence.find(params[:residence_id])
+        @residence = current_user.residences.find(params[:residence_id])
+      rescue ActiveRecord::RecordNotFound
+        render json: { error: 'Residence not found' }, status: :not_found
+      end
+
+      def set_item
+        @item = @residence.items.find(params[:id])
+      rescue ActiveRecord::RecordNotFound
+        render json: { error: 'Item not found' }, status: :not_found
       end
 
       def item_params
-        params.require(:item).permit(:name, :description, :value)
+        params.require(:item).permit(:name, :description, :value, :price, :quantity, :location, :condition, :category)
       end
     end
   end
